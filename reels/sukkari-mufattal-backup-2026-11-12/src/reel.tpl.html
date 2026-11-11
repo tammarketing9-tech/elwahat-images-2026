@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Basateen Al Wahat — Sukkari Mufattal Malaki reel</title>
+<style>
+@font-face{font-family:'Cairo';font-weight:700;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-arabic-700-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Cairo';font-weight:800;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-arabic-800-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Cairo';font-weight:900;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-arabic-900-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Cairo';font-weight:700;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+@font-face{font-family:'Cairo';font-weight:800;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+@font-face{font-family:'Cairo';font-weight:900;src:url('../fonts/node_modules/@fontsource/cairo/files/cairo-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+@font-face{font-family:'Tajawal';font-weight:500;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-arabic-500-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Tajawal';font-weight:700;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-arabic-700-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Tajawal';font-weight:800;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-arabic-800-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200F;}
+@font-face{font-family:'Tajawal';font-weight:500;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+@font-face{font-family:'Tajawal';font-weight:700;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+@font-face{font-family:'Tajawal';font-weight:800;src:url('../fonts/node_modules/@fontsource/tajawal/files/tajawal-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F;}
+
+:root{--green:#225A45;--caramel:#D08B48;--char:#2E3A3D;--brown:#5A4730;--cream:#F5F1E8;--sand:#E8D9BC;--dgreen:#1B4A39}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#111}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;background:var(--cream);direction:rtl;font-family:'Cairo','Tajawal',sans-serif;color:var(--char)}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.abs{position:absolute;will-change:transform,opacity}
+img{display:block}
+.box{display:inline-block;background:var(--green);color:var(--cream);font-family:'Cairo';font-weight:900;line-height:1.28;padding:.10em .46em .16em;border-radius:.24em;white-space:nowrap;box-shadow:0 14px 30px rgba(20,40,30,.28)}
+.box.light{background:var(--cream);color:var(--green)}
+.obj{filter:drop-shadow(9px 12px 12px rgba(70,55,30,.30))}
+.prod{filter:drop-shadow(8px 18px 16px rgba(70,45,15,.42))}
+.ctr{left:90px;width:900px;text-align:center}
+.stripes{display:inline-flex;flex-direction:column;gap:7px;width:150px}
+.stripes i{display:block;height:9px;border-radius:5px}
+.stripes i:nth-child(1){background:var(--green)}
+.stripes i:nth-child(2){background:var(--caramel)}
+.stripes i:nth-child(3){background:var(--char)}
+.chip{display:inline-block;background:#fff;color:var(--green);font-family:'Cairo';font-weight:800;font-size:44px;line-height:1.3;padding:6px 24px 10px;border-radius:999px;border:3px solid var(--green);margin:0 7px;white-space:nowrap}
+.chip b{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--caramel);margin-inline-end:12px;vertical-align:middle;position:relative;top:-3px}
+.guide{position:absolute;left:0;width:1080px;height:0;border-top:3px dashed rgba(255,0,80,.8);z-index:99}
+#end svg path{transform-box:fill-box;transform-origin:center}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ===================== SET (digital decor) ===================== -->
+  <div id="set" class="layer">
+    <div id="world" class="abs" style="left:0;top:0;width:1080px;height:1920px;transform-origin:0 0">
+      <img id="bg" class="abs" src="../assets/bg.jpg" style="left:0;top:0;width:1080px;height:1920px">
+      <div id="palm" class="abs" style="left:470px;top:-170px;width:900px;height:760px;transform-origin:60% 0%;filter:blur(12px);opacity:0">
+        <svg viewBox="0 0 451.12 375.98" width="900" height="750"><path fill="#3d5a3a" d="{{CROWN_D}}"/></svg>
+      </div>
+      <img id="cartons" class="abs obj" src="../assets/cartons.png" style="left:-40px;top:-60px;width:624px">
+      <img id="flowers" class="abs obj" src="../assets/flowers.png" style="left:676px;top:334px;width:405px;transform-origin:50% 100%">
+      <img id="dallah" class="abs obj" src="../assets/dallah.png" style="left:285px;top:193px;width:508px">
+      <div id="shine" class="abs" style="left:285px;top:193px;width:508px;height:688px;-webkit-mask-image:url(../assets/dallah_gold.png);-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat;background:linear-gradient(112deg,rgba(255,255,255,0) 46.5%,rgba(255,252,240,.85) 50%,rgba(255,255,255,0) 53.5%);background-size:320% 100%;background-repeat:no-repeat;opacity:0"></div>
+      <img id="board" class="abs" src="../assets/board.png" style="left:0;top:0;width:1080px;height:1920px">
+
+      <img id="p5" class="abs prod" src="../assets/p500.png" style="left:270px;top:937px;width:540px;transform-origin:50% 100%">
+      <img id="p1" class="abs prod" src="../assets/p1kg.png" style="left:300px;top:829px;width:480px;transform-origin:50% 100%">
+      <img id="p3" class="abs prod" src="../assets/p3kg.png" style="left:208px;top:731px;width:665px;transform-origin:50% 100%">
+
+      <!-- title on the board (S2) -->
+      <div id="ttl" class="abs ctr" style="top:1120px">
+        <div id="ttlStripes" class="stripes" style="transform-origin:50% 50%"><i></i><i></i><i></i></div>
+        <div id="ttlH" style="font-family:'Cairo';font-weight:900;font-size:94px;line-height:1.3;color:var(--green);margin-top:14px;white-space:nowrap">سكري مفتل ملكي</div>
+        <div id="ttlSub" style="font-family:'Tajawal';font-weight:700;font-size:50px;line-height:1.4;color:var(--brown);margin-top:2px">من سكري القصيم</div>
+      </div>
+
+      <!-- attributes (S3) -->
+      <div id="attr" class="abs" style="left:90px;top:1458px;width:900px;text-align:center">
+        <div style="white-space:nowrap"><span id="c1" class="chip abs" style="position:relative"><b></b>حبة كبيرة</span><span id="c2" class="chip abs" style="position:relative"><b></b>قوام متماسك</span></div>
+        <div style="white-space:nowrap;margin-top:12px"><span id="c3" class="chip abs" style="position:relative"><b></b>حلاوة صافية</span></div>
+      </div>
+
+      <!-- sizes (S4) -->
+      <div id="sizes" class="abs" style="left:40px;top:1446px;width:1000px;height:230px">
+        <div class="sz abs" id="szA"><span class="szN">500 جرام</span><span class="szP">20.95 ر.س</span></div>
+        <div class="sz abs" id="szB"><span class="szN">1000 جرام</span><span class="szP">36.95 ر.س</span></div>
+        <div class="sz abs" id="szC"><span class="szN">3 كيلو</span><span class="szP">94.95 ر.س</span></div>
+        <div id="dots" class="abs" style="left:0;top:146px;width:1000px;text-align:center;direction:rtl">
+          <i id="d1"></i><i id="d2"></i><i id="d3"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="tag" class="abs" style="right:40px;top:252px"><span class="box" style="font-size:40px;border-radius:999px;padding:.2em .8em .3em">سكري مفتل ملكي</span></div>
+
+    <!-- hospitality overlay (S5) -->
+    <div id="hosp" class="abs" style="left:0;top:1190px;width:1080px;text-align:center">
+      <div><span id="ho1" class="box abs" style="position:relative;font-size:112px">قهوة وتمر..</span></div>
+      <div style="margin-top:22px"><span id="ho2" class="box light abs" style="position:relative;font-size:112px">أصل الكرم</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== S1 HOOK ===================== -->
+  <div id="s1" class="layer">
+    <img id="hook" class="abs" src="../assets/hook.jpg" style="left:0;top:0;width:1080px;height:1920px;transform-origin:50% 66%">
+    <div class="abs" style="left:0;top:0;width:1080px;height:520px;background:linear-gradient(rgba(20,40,30,.30),rgba(20,40,30,0))"></div>
+    <div id="flash" class="abs" style="left:0;top:0;width:1080px;height:1920px;background:#fff8ec;opacity:0"></div>
+    <div id="bug" class="abs" style="left:340px;top:256px;width:400px;height:104px;background:rgba(255,255,255,.94);border-radius:56px;box-shadow:0 10px 26px rgba(20,40,30,.22);display:flex;align-items:center;justify-content:center">
+      <img src="../assets/logo-main.svg" style="height:74px">
+    </div>
+    <div class="abs" style="right:54px;top:404px;text-align:right">
+      <div><span id="h1" class="box abs" style="position:relative;font-size:104px;transform-origin:100% 50%">حبّة كبيرة…</span></div>
+      <div style="margin-top:20px"><span id="h2" class="box light abs" style="position:relative;font-size:104px;transform-origin:100% 50%">وقرمشة تسمعها</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== S6 END CARD ===================== -->
+  <div id="end" class="layer" style="background:var(--cream)">
+    <div class="abs" style="left:-260px;top:-250px;width:1100px;height:920px;opacity:.55;transform:rotate(-14deg)">
+      <svg viewBox="0 0 451.12 375.98" width="1100" height="917"><path fill="#EDE4D1" d="{{CROWN_D}}"/></svg>
+    </div>
+    <div class="abs" style="left:520px;top:1390px;width:900px;height:760px;opacity:.5;transform:rotate(168deg)">
+      <svg viewBox="0 0 451.12 375.98" width="900" height="750"><path fill="#EDE4D1" d="{{CROWN_D}}"/></svg>
+    </div>
+    <div id="endLogo" class="abs" style="left:130px;top:372px;width:820px">{{LOGO_FULL}}</div>
+    <div id="endProd" class="abs ctr" style="top:900px">
+      <div style="font-family:'Cairo';font-weight:900;font-size:82px;line-height:1.3;color:var(--green)">سكري مفتل ملكي</div>
+      <div style="font-family:'Tajawal';font-weight:700;font-size:46px;line-height:1.5;color:var(--brown);margin-top:4px">500 جرام · 1000 جرام · 3 كيلو</div>
+    </div>
+    <div id="cta" class="abs" style="left:230px;top:1150px;width:620px;height:158px;border-radius:79px;background:var(--green);box-shadow:0 18px 36px rgba(20,60,40,.30);display:flex;align-items:center;justify-content:center;font-family:'Cairo';font-weight:900;font-size:76px;color:var(--cream);line-height:1;padding-bottom:10px">اطلبه الآن</div>
+    <div id="url" class="abs ctr" style="top:1350px;font-family:'Cairo';font-weight:800;font-size:72px;line-height:1.3;color:var(--char);direction:ltr;letter-spacing:1px">elwahat.com</div>
+    <div id="ship" class="abs ctr" style="top:1462px;font-family:'Tajawal';font-weight:700;font-size:44px;line-height:1.4;color:var(--brown)">التوصيل خلال 1 إلى 3 أيام عمل</div>
+    <div id="endStripes" class="abs" style="left:440px;top:1566px;width:200px"><div class="stripes" style="width:200px"><i></i><i></i><i></i></div></div>
+  </div>
+
+  <div id="guides" style="display:none"><div class="guide" style="top:250px"></div><div class="guide" style="top:1670px"></div></div>
+</div>
+
+<style>
+.sz{left:0;top:0;width:1000px;display:flex;align-items:center;justify-content:center;gap:28px;direction:rtl;white-space:nowrap}
+.sz .szN{font-family:'Cairo';font-weight:900;font-size:92px;line-height:1.25;color:var(--green)}
+.sz .szP{display:inline-block;background:var(--green);color:var(--cream);font-family:'Tajawal';font-weight:800;font-size:54px;line-height:1.2;padding:12px 34px 7px;border-radius:999px;position:relative;top:6px}
+#dots i{display:inline-block;width:18px;height:18px;border-radius:50%;background:#cfc8b8;margin:0 9px;transition:none}
+</style>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const prog=(t,a,b)=>clamp((t-a)/(b-a));
+const lerp=(a,b,x)=>a+(b-a)*x;
+const eOut=x=>1-Math.pow(1-x,3);
+const eIn=x=>x*x*x;
+const eInQ=x=>x*x;
+const eIO=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eExpo=x=>x>=1?1:1-Math.pow(2,-10*x);
+const eBack=(x,s=1.70158)=>1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2);
+function eBounce(x){const n1=7.5625,d1=2.75;if(x<1/d1)return n1*x*x;if(x<2/d1)return n1*(x-=1.5/d1)*x+.75;if(x<2.5/d1)return n1*(x-=2.25/d1)*x+.9375;return n1*(x-=2.625/d1)*x+.984375;}
+function T(el,o){const x=o.x||0,y=o.y||0,r=o.r||0,sx=(o.sx!==undefined?o.sx:(o.s!==undefined?o.s:1)),sy=(o.sy!==undefined?o.sy:(o.s!==undefined?o.s:1));
+  const op=(o.o!==undefined?o.o:1);
+  el.style.transform=`translate(${x.toFixed(2)}px,${y.toFixed(2)}px) rotate(${r.toFixed(3)}deg) scale(${sx.toFixed(4)},${sy.toFixed(4)})`;
+  el.style.opacity=op.toFixed(3); el.style.visibility=op<=0.002?'hidden':'visible';}
+function pop(el,t,a,dur=0.34,extra={}){const p=prog(t,a,a+dur);T(el,Object.assign({s:lerp(0.55,1,eBack(p)),o:clamp(p*3)},extra));}
+
+function renderAt(t){
+  // ---------------- S1 hook ----------------
+  const s1=$('s1'), set=$('set'), end=$('end');
+  const push=eIO(prog(t,2.70,3.06));
+  if(t<3.07){
+    s1.style.display='block';
+    const z = t<0.9 ? lerp(1.78,1.10,eExpo(prog(t,0,0.9))) : lerp(1.10,1.17,prog(t,0.9,3.0));
+    $('hook').style.transform=`scale(${z.toFixed(4)})`;
+    const pb=prog(t,0.12,0.5); T($('bug'),{y:lerp(-40,0,eOut(pb)),o:pb});
+    $('flash').style.opacity='0';
+    pop($('h1'),t,0.30,0.36);
+    const p2=prog(t,0.82,1.18), env=Math.sin(Math.PI*prog(t,1.30,1.85));
+    T($('h2'),{s:lerp(0.55,1,eBack(p2)),o:clamp(p2*3),r:Math.sin((t-1.30)*2*Math.PI*9)*1.5*env,x:Math.sin((t-1.30)*2*Math.PI*11)*5*env});
+    s1.style.transform=`translateY(${(-1920*push).toFixed(2)}px)`;
+  } else { s1.style.display='none'; }
+
+  // ---------------- SET ----------------
+  if(t>=2.70 && t<25.2){
+    set.style.display='block';
+    set.style.transform=`translateY(${(1920*(1-push)).toFixed(2)}px)`;
+    // camera
+    const slow=prog(t,3.0,20.0), p5c=eIO(prog(t,19.95,21.35)), drift=prog(t,21.35,25.2);
+    let cs=1+0.03*slow, tx=540*(1-cs), ty=900*(1-cs);
+    const cs5=1.45+0.05*drift, tx5=540-565*cs5, ty5=840-690*cs5;
+    cs=lerp(cs,cs5,p5c); tx=lerp(tx,tx5,p5c); ty=lerp(ty,ty5,p5c);
+    // impact shake
+    const u=t-8.42; if(u>0&&u<0.24){const k=1-u/0.24; tx+=Math.sin(u*95)*7*k; ty+=Math.cos(u*78)*6*k;}
+    $('world').style.transform=`translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${cs.toFixed(5)})`;
+
+    // palm shadow
+    const pp=prog(t,3.3,4.6); $('palm').style.opacity=(0.19*pp).toFixed(3);
+    $('palm').style.transform=`rotate(${(Math.sin(t*0.55)*1.4+8).toFixed(3)}deg)`;
+
+    // decor entrance
+    const par=slow+0.6*p5c;
+    let p=prog(t,3.05,3.58); T($('cartons'),{x:lerp(-640,0,eBack(p,1.1))-10*par,o:t>=3.05?1:0});
+    p=prog(t,3.26,3.84);     T($('dallah'),{y:lerp(-800,0,eBounce(p)),x:3*par,o:t>=3.26?1:0});
+    p=prog(t,3.50,4.00);     T($('flowers'),{x:lerp(540,0,eBack(p,1.1))+11*par,r:Math.sin(t*1.25)*0.55,o:t>=3.50?1:0});
+    p=prog(t,3.72,4.22);     T($('board'),{y:lerp(520,0,eOut(p)),o:clamp(p*2.2)});
+
+    // gold shine sweeps
+    const sh=(a,b)=>{const q=prog(t,a,b); return (q>0&&q<1)?q:-1;};
+    let q=sh(5.35,6.25); if(q<0) q=sh(21.7,22.7);
+    if(q>=0){ $('shine').style.opacity=Math.min(1,Math.sin(Math.PI*q)*2.2).toFixed(3); $('shine').style.backgroundPosition=`${lerp(115,-15,q).toFixed(2)}% 0`; $('shine').style.visibility='visible'; }
+    else { $('shine').style.opacity='0'; $('shine').style.visibility='hidden'; }
+    $('shine').style.transform=`translateX(${(3*par).toFixed(2)}px)`;
+
+    // ---- title on board (S2)
+    const tout=prog(t,7.30,7.70);
+    T($('ttl'),{y:26*eIn(tout),o:(t>=4.2&&t<7.72)?1-tout:0});
+    p=prog(t,4.25,4.62); T($('ttlStripes'),{sx:eOut(p),sy:1,o:p>0?1:0});
+    p=eOut(prog(t,4.38,5.02)); $('ttlH').style.clipPath=`inset(-10% 0 -10% ${(100*(1-p)).toFixed(2)}%)`; $('ttlH').style.transform=`translateY(${(18*(1-p)).toFixed(2)}px)`;
+    p=prog(t,4.92,5.32); $('ttlSub').style.opacity=p.toFixed(3); $('ttlSub').style.transform=`translateY(${(22*(1-eOut(p))).toFixed(2)}px)`;
+
+    // ---- products
+    // p3 (3kg): S3 drop at 8.0 -> stays -> exit 13.0-13.36 ; re-enter 17.72-18.18 -> stays
+    const P3=$('p3'), P1=$('p1'), P5=$('p5');
+    if(t<8.0){ T(P3,{o:0}); }
+    else if(t<13.0){
+      const d=prog(t,8.0,8.42);
+      let y=lerp(-1150,0,eInQ(d)), s=lerp(1.12,1,d), r=lerp(-5,0,d), sx=s, sy=s;
+      if(u>0&&u<0.7){ y+=-20*Math.exp(-u*8)*Math.abs(Math.sin(u*17)); const sq=Math.exp(-u*13); sx=1+0.022*sq; sy=1-0.04*sq; }
+      T(P3,{y:y,r:r,sx:sx,sy:sy,o:1});
+    } else if(t<13.40){
+      const e=eIn(prog(t,13.0,13.36)); T(P3,{x:-980*e,r:-7*e,o:1-0.6*e});
+    } else if(t<17.70){ T(P3,{o:0}); }
+    else { const e=prog(t,17.70,18.18); T(P3,{x:lerp(980,0,eBack(e,0.9)),r:lerp(6,0,eOut(e)),o:1}); }
+    // p5 (500g): enter 13.22-13.70 ; exit 15.22-15.58
+    if(t<13.22||t>=15.60){ T(P5,{o:0}); }
+    else if(t<15.22){ const e=prog(t,13.22,13.70); T(P5,{x:lerp(980,0,eBack(e,0.9)),r:lerp(6,0,eOut(e)),o:1}); }
+    else { const e=eIn(prog(t,15.22,15.58)); T(P5,{x:-980*e,r:-7*e,o:1-0.6*e}); }
+    // p1 (1kg): enter 15.44-15.92 ; exit 17.50-17.86
+    if(t<15.44||t>=17.88){ T(P1,{o:0}); }
+    else if(t<17.50){ const e=prog(t,15.44,15.92); T(P1,{x:lerp(980,0,eBack(e,0.9)),r:lerp(6,0,eOut(e)),o:1}); }
+    else { const e=eIn(prog(t,17.50,17.86)); T(P1,{x:-980*e,r:-7*e,o:1-0.6*e}); }
+
+    // ---- attributes (S3)
+    const ain=prog(t,8.72,9.04), aout=prog(t,12.66,12.98);
+    T($('attr'),{y:lerp(26,0,eOut(ain))+(-20*eIn(aout)),o:(t>=8.72&&t<13.0)?ain*(1-aout):0});
+    pop($('c1'),t,9.20); pop($('c2'),t,10.10); pop($('c3'),t,11.00);
+
+    { const tp=prog(t,8.62,8.98), tq=prog(t,24.6,24.9); T($('tag'),{x:lerp(60,0,eOut(tp)),o:tp*(1-tq)}); }
+
+    // ---- sizes (S4)
+    const zs=[['szA',13.50,15.20],['szB',15.72,17.48],['szC',17.98,19.80]];
+    zs.forEach(([id,a,b],i)=>{ const pin=prog(t,a,a+0.30), pout=prog(t,b,b+0.26);
+      T($(id),{y:lerp(46,0,eOut(pin))-40*eIn(pout),o:(t>=a&&t<b+0.26)?clamp(pin*2)*(1-pout):0}); });
+    const dotsO=prog(t,13.50,13.80)*(1-prog(t,19.80,20.06)); $('dots').style.opacity=dotsO.toFixed(3);
+    const act = t<15.46?0:(t<17.72?1:2);
+    ['d1','d2','d3'].forEach((id,i)=>{ const el=$(id); el.style.background=(i===act)?'#225A45':'#cfc8b8'; el.style.transform=(i===act)?'scale(1.35)':'scale(1)'; });
+
+    // ---- hospitality (S5)
+    pop($('ho1'),t,21.05,0.38); pop($('ho2'),t,21.50,0.38);
+    $('hosp').style.visibility=(t>=21.0)?'visible':'hidden';
+  } else { set.style.display='none'; }
+
+  // ---------------- END CARD ----------------
+  if(t>=24.70){
+    end.style.display='block';
+    const e=eIO(prog(t,24.70,25.16)); end.style.transform=`translateY(${(1920*(1-e)).toFixed(2)}px)`;
+    const g=id=>end.querySelector('#'+id);
+    const S=(el,o)=>{ if(!el)return; const x=o.x||0,y=o.y||0,s=(o.s!==undefined?o.s:1),r=o.r||0,op=(o.o!==undefined?o.o:1); el.style.transform=`translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`; el.style.opacity=op; };
+    let p=prog(t,25.20,25.86); S(g('crown'),{s:lerp(0.2,1,eBack(p,1.4)),r:lerp(-40,0,eOut(p)),o:clamp(p*3)});
+    p=prog(t,25.42,25.92);     S(g('trunk'),{y:lerp(40,0,eOut(p)),o:p});
+    ['stripe-1','stripe-2','stripe-3'].forEach((id,i)=>{ const q=prog(t,25.62+i*0.10,25.98+i*0.10); S(g(id),{y:lerp(30,0,eOut(q)),o:q}); });
+    p=prog(t,25.74,26.30);     S(g('alwahat'),{x:lerp(-90,0,eOut(p)),o:p});
+    p=prog(t,25.86,26.42);     S(g('basateen'),{x:lerp(90,0,eOut(p)),o:p});
+    p=prog(t,26.30,26.80);     end.querySelector('#ornament').style.opacity=p; end.querySelector('g#tagline').style.opacity=prog(t,26.45,26.95);
+    p=prog(t,26.70,27.14);     T($('endProd'),{y:lerp(34,0,eOut(p)),o:p});
+    p=prog(t,27.05,27.45);     const pulse=1+0.035*Math.sin(Math.PI*prog(t,28.2,28.7))+0.035*Math.sin(Math.PI*prog(t,29.1,29.6));
+    T($('cta'),{s:lerp(0.5,1,eBack(p))*pulse,o:clamp(p*3)});
+    p=prog(t,27.40,27.80);     T($('url'),{y:lerp(26,0,eOut(p)),o:p});
+    p=prog(t,27.62,28.02);     T($('ship'),{y:lerp(26,0,eOut(p)),o:p});
+    p=prog(t,27.86,28.26);     T($('endStripes'),{sx:eOut(p),sy:1,o:p>0?1:0});
+  } else { end.style.display='none'; }
+}
+window.renderAt=renderAt;
+if(location.search.includes('guides')) $('guides').style.display='block';
+const imgs=[...document.images].map(i=>i.complete?Promise.resolve():new Promise(r=>{i.onload=r;i.onerror=r;}));
+Promise.all([document.fonts.ready,...imgs]).then(async()=>{
+  for(const f of ["900 100px Cairo","800 50px Cairo","700 50px Cairo","500 40px Tajawal","700 40px Tajawal","800 40px Tajawal"]){ try{ await document.fonts.load(f,"سكري elwahat 123"); }catch(e){} }
+  renderAt(0); window.READY=true;
+});
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 import sys, json, numpy as np, cv2
 from PIL import Image
-def run(src,dst,gamma=0.90,sat=1.04):
+def run(src,dst,gamma=0.90,sat=1.04,rect=None):
     a=np.array(Image.open(src).convert('RGB')).astype(np.float32); H,W=a.shape[:2]
     hsv=cv2.cvtColor(a.astype(np.uint8),cv2.COLOR_RGB2HSV).astype(np.float32); h,s,v=hsv[...,0],hsv[...,1]/255,hsv[...,2]/255
     # protected sticker: bright low-sat regions NOT touching the image border (background touches the border)
@@ -11,6 +11,7 @@ def run(src,dst,gamma=0.90,sat=1.04):
         if x>2 and y>2 and x+w<W-2 and y+hh<H-2 and ar>0.03*H*W:
             cnt,_=cv2.findContours((lab==k).astype(np.uint8),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
             cv2.fillPoly(prot,[cv2.convexHull(np.vstack(cnt))],1)
+    if rect: x0,y0,x1,y1=rect; prot[y0:y1,x0:x1]=1  # manual sticker box for coloured stickers
     prot=cv2.dilate(prot,np.ones((25,25),np.uint8))
     # dates only: red-orange, saturated
     w=(((h<16)|(h>168)).astype(np.float32))*np.clip((s-0.40)/0.15,0,1)*(1-prot)
@@ -23,4 +24,4 @@ def run(src,dst,gamma=0.90,sat=1.04):
     qa={'sticker_px':int(prot.sum()),'sticker_max_change':int(np.abs(out.astype(int)-a.astype(int))[prot>0].max()) if prot.sum() else None,
         'dates_V_before':round(float(v[w[...,0]>0.5].mean()),3),'dates_V_after':round(float(cv2.cvtColor(out,cv2.COLOR_RGB2HSV)[...,2][w[...,0]>0.5].mean()/255),3)}
     Image.fromarray((prot*255).astype(np.uint8)).resize((W//4,H//4)).save(dst+'.prot.png'); print(dst,qa)
-run(sys.argv[1],sys.argv[2])
+run(sys.argv[1],sys.argv[2],rect=[int(v) for v in sys.argv[3].split(',')] if len(sys.argv)>3 else None)

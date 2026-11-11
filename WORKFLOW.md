@@ -12,6 +12,7 @@
 
 ## الخطوات
 1. **التفتيح:** `python3 tools/lite.py in.jpg products/<SKU>-1.jpg` (والصورة الثانية بـ `-2`).
+   للستيكر الملوّن (غير الأبيض، مثل إنتاج الخير) لا يكتشفه السكربت تلقائياً (`sticker_px: 0`)، فمرّر مربعاً يدوياً يغطيه: `python3 tools/lite.py in.jpg out.jpg x0,y0,x1,y1` ثم راجع قصاصة الاستيكر بصرياً.
    تأكد أن تقرير QA يعطي `sticker_max_change: 0` وأن `dates_V_after` أعلى قليلاً من `dates_V_before`. احذف ملف `.prot.png` قبل الرفع.
 2. **GitHub:** `git add products/ && git commit -m "Add <SKU> images" && git push origin HEAD`.
 3. **الموقع:** في المتصفح المدمج بتطبيق Claude، والمستخدم داخل `https://elwahat.com/wp-admin/`، نفّذ JavaScript:

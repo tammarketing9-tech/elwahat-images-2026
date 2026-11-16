@@ -28,7 +28,7 @@ add_filter('render_block', function($html,$block){
   $bn=$block['blockName']??''; if(is_admin() || strpos($bn,'wd/')!==0 || strpos($bn,'price')===false || strpos($html,'wd-loop-prod-price')===false) return $html;
   global $product; if(!$product) return $html; $d=ow_ct_data($product); if(!$d) return $html;
   $url=esc_url(add_query_arg(['add-to-cart'=>$product->get_id(),'ow_pack'=>'carton'], wc_get_cart_url()));
-  return $html.'<div class="ow-ct-pill"><span class="ow-ct-unit">'.esc_html(ow_ct_t('unit')).'</span>'
+  return $html.'<div class="ow-ct-pill" data-pid="'.(int)$product->get_id().'" data-name="'.esc_attr($product->get_name()).'" data-unit="'.esc_attr((float)$product->get_price()).'" data-cq="'.(int)$d['qty'].'" data-cp="'.esc_attr($d['price']).'"><span class="ow-ct-unit">'.esc_html(ow_ct_t('unit')).'</span>'
      .'<a class="ow-ct-btn" href="'.$url.'" rel="nofollow"><b>'.esc_html(ow_ct_t('carton',$d['qty'])).'</b> '.ow_ct_amt($d['price']).'</a></div>';
 },20,2);
 /* 2) Product page: prominent carton box after the normal add-to-cart form */
@@ -61,6 +61,33 @@ add_filter('woocommerce_get_item_data', function($meta,$it){
 add_action('woocommerce_checkout_create_order_line_item', function($item,$key,$values){
   if(($values['ow_pack']??'')==='carton'){ $d=ow_ct_data($values['product_id']); if($d) $item->add_meta_data('العبوة','كرتون '.$d['qty'].' حبات',true); }
 },10,3);
+/* 5) Card add-to-cart chooser: حبة / كرتون (bottom sheet on mobile, modal on desktop; AJAX add with ow_pack) */
+add_action('wp_footer', function(){ if(is_admin()) return; $en=ow_ct_lang()==='en'; ?>
+<style id="ow-ch-css">
+.ow-ch-bg{position:fixed;inset:0;background:rgba(15,30,22,.45);z-index:99998;opacity:0;transition:opacity .2s}
+.ow-ch-bg.on{opacity:1}
+.ow-ch{position:fixed;z-index:99999;left:50%;bottom:0;transform:translate(-50%,100%);width:min(460px,100%);background:#fff;border-radius:18px 18px 0 0;padding:18px 16px calc(16px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(0,0,0,.15);transition:transform .25s ease;direction:<?php echo $en?'ltr':'rtl'; ?>}
+.ow-ch.on{transform:translate(-50%,0)}
+@media(min-width:769px){.ow-ch{bottom:50%;border-radius:18px;transform:translate(-50%,60%);opacity:0}.ow-ch.on{transform:translate(-50%,50%);opacity:1}}
+.ow-ch-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:4px}
+.ow-ch-t{font-size:15px;font-weight:800;color:#1f2a24;line-height:1.4}
+.ow-ch-x{border:0;background:#f2f2ee;border-radius:50%;width:32px;height:32px;font-size:18px;line-height:32px;padding:0;color:#444;flex:0 0 auto}
+.ow-ch-s{font-size:12.5px;color:#777;margin-bottom:12px}
+.ow-ch-o{display:flex;justify-content:space-between;align-items:center;width:100%;border:1.5px solid #e3e1d8;border-radius:12px;padding:12px 14px;margin:0 0 10px;background:#fff;text-align:start;cursor:pointer;gap:10px;font:inherit}
+.ow-ch-o:hover,.ow-ch-o:focus{border-color:#1f5d3a}
+.ow-ch-o.ct{border-color:#c8962e;background:#fffaf0}
+.ow-ch-o b{display:block;font-size:15px;color:#1f5d3a}
+.ow-ch-o small{display:block;font-size:12px;color:#777;margin-top:2px}
+.ow-ch-o .p{font-size:18px;font-weight:800;color:#1f5d3a;white-space:nowrap}
+.ow-ch-o.busy{opacity:.6;pointer-events:none}
+.ow-ch-ok{display:none;text-align:center;padding:10px 0 4px;color:#1f5d3a;font-weight:700}
+.ow-ch-ok a{display:inline-block;margin-top:10px;background:#1f5d3a;color:#fff;border-radius:10px;padding:9px 18px}
+</style>
+<script id="ow-ch-js">
+/* see live Code Snippet #10 on elwahat.com for the exact JS (identical) */
+</script>
+<?php }, 98);
+
 /* 4) Styles */
 add_action('wp_head', function(){ ?>
 <style id="ow-ct-css">

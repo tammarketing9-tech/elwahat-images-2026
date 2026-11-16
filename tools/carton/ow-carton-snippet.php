@@ -19,13 +19,14 @@ function ow_ct_t($k,$q=0){
       'each'=>$en?'per piece in carton':'سعر الحبة في الكرتون','pack'=>$en?'Pack':'العبوة','piece'=>$en?'Piece':'حبة','wh'=>$en?'Wholesale by the carton':'جملة بالكرتون'];
   return $t[$k];
 }
-/* 1) Category / shop cards: carton pill under the price */
-add_action('woocommerce_after_shop_loop_item_title', function(){
-  global $product; $d=ow_ct_data($product); if(!$d) return;
+/* 1) Category / shop cards (Woodmart loop builder): carton pill after the price block */
+add_filter('render_block', function($html,$block){
+  $bn=$block['blockName']??''; if(is_admin() || strpos($bn,'wd/')!==0 || strpos($bn,'price')===false || strpos($html,'wd-loop-prod-price')===false) return $html;
+  global $product; if(!$product) return $html; $d=ow_ct_data($product); if(!$d) return $html;
   $url=esc_url(add_query_arg(['add-to-cart'=>$product->get_id(),'ow_pack'=>'carton'], wc_get_cart_url()));
-  echo '<div class="ow-ct-pill"><span class="ow-ct-unit">'.esc_html(ow_ct_t('unit')).'</span>'
+  return $html.'<div class="ow-ct-pill"><span class="ow-ct-unit">'.esc_html(ow_ct_t('unit')).'</span>'
      .'<a class="ow-ct-btn" href="'.$url.'" rel="nofollow"><b>'.esc_html(ow_ct_t('carton',$d['qty'])).'</b> '.wc_price($d['price']).'</a></div>';
-}, 11);
+},20,2);
 /* 2) Product page: prominent carton box after the normal add-to-cart form */
 add_action('woocommerce_after_add_to_cart_form', function(){
   global $product; $d=ow_ct_data($product); if(!$d) return; ?>

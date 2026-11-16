@@ -14,7 +14,7 @@ function ow_ct_data($p){
   return ['qty'=>$q,'price'=>$c,'per'=>round($c/$q,2),'save'=>max(0,$save)];
 }
 function ow_ct_amt($v){
-  $n=rtrim(rtrim(number_format((float)$v,2,'.',''),'0'),'.'); $en=ow_ct_lang()==='en';
+  $n=rtrim(rtrim(number_format((float)$v,2,'.',''),'0'),'.'); $en=ow_ct_lang()==='en'; if(!$en) $n=str_replace('.','٫',$n);
   return '<span class="ow-ct-amt" dir="'.($en?'ltr':'rtl').'"><bdi>'.esc_html($n).'</bdi>&nbsp;'.esc_html($en?'SAR':'ر.س').'</span>';
 }
 function ow_ct_t($k,$q=0){
@@ -64,6 +64,9 @@ add_action('woocommerce_checkout_create_order_line_item', function($item,$key,$v
 /* 4) Styles */
 add_action('wp_head', function(){ ?>
 <style id="ow-ct-css">
+/* ow-price-dir: Arabic pages — number first, then ر.س (all wc_price outputs) */
+html[dir="rtl"] .woocommerce-Price-amount bdi{direction:rtl!important;unicode-bidi:isolate!important}
+html[dir="rtl"] .woocommerce-Price-currencySymbol{margin-inline-start:.25em}
 .wd-products.wd-grid-g{align-items:stretch}
 .wd-products .wd-product{height:100%}
 .wd-products .wd-product>.wd-product-wrapper{display:flex;flex-direction:column;height:100%}

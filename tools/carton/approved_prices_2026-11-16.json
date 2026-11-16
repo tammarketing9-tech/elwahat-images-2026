@@ -1,0 +1,41 @@
+{
+ "_note": "شيت العميل المعتمد 16 نوفمبر 2026. unit = سعر الحبة الجديد، cq = عدد الحبات في الكرتون، cp = سعر الكرتون. carton_only = المنتج نفسه كرتون كبير (سعره = سعر الكرتون).",
+ "update": [
+  {"sku":"BW-KHL-SJ-1KG","unit":16.63,"cq":8,"cp":133},
+  {"sku":"BW-KHL-SHY-1KG","unit":11,"cq":8,"cp":88},
+  {"sku":"BW-KHL-RYL-1KG","unit":8.88,"cq":8,"cp":71},
+  {"sku":"BW-KHL-ASR-1KG","unit":8.88,"cq":8,"cp":71},
+  {"sku":"BW-KHL-GLD-1KG","unit":8.25,"cq":8,"cp":66},
+  {"sku":"BW-KHL-GLD-500G","unit":5,"cq":12,"cp":60},
+  {"sku":"BW-KHL-GLD-250G","unit":2.58,"cq":12,"cp":31},
+  {"sku":"BW-SKR-MFR-500G","unit":5.08,"cq":12,"cp":61},
+  {"sku":"BW-SKR-MFR-1KG","unit":8.88,"cq":8,"cp":71},
+  {"sku":"BW-SKR-MFR-3KG","unit":92,"carton_only":true},
+  {"sku":"BW-SKR-MFF-1KG","unit":8.13,"cq":8,"cp":65},
+  {"sku":"BW-SKR-MFF-3KG","unit":60,"carton_only":true},
+  {"sku":"BW-SKR-RTB-3KG","unit":70,"carton_only":true,"publish_if_images":true},
+  {"sku":"BW-SKR-RTB-500G","unit":12,"flag":"الشيت: لا عدد، والرقم 12 في عمود الكرتون — طُبّق كسعر للحبة"},
+  {"sku":"BW-SKR-STM-500G","unit":17.5,"cq":12,"cp":210},
+  {"sku":"BW-SQI-RYL-3KG","unit":65,"carton_only":true},
+  {"sku":"BW-MJD-RYL-3KG","unit":145,"carton_only":true,"publish_if_images":true},
+  {"sku":"BW-MJD-RYL-1KG","unit":52},
+  {"sku":"BW-RSH-STD-1KG","unit":15.7,"cq":10,"cp":157},
+  {"sku":"BW-PST-KHL-1KG","unit":13,"cq":5,"cp":65,"flag":"الحبة كانت 6.50 وصارت 13"},
+  {"sku":"BW-PST-STD-3X5KG","unit":70,"carton_only":true},
+  {"sku":"EK-KHL-SJ-1KG","unit":16.63,"cq":8,"cp":133},
+  {"sku":"EK-KHL-SHY-1KG","unit":11,"cq":8,"cp":88},
+  {"sku":"EK-KHL-RYL-1KG","unit":9,"cq":8,"cp":72},
+  {"sku":"EK-KHL-GLD-1KG","unit":8.38,"cq":8,"cp":67},
+  {"sku":"EK-SKR-RYL-1KG","unit":8.88,"cq":8,"cp":71},
+  {"sku":"EK-SKR-FKH-1KG","unit":7.88,"cq":8,"cp":63},
+  {"sku":"EK-SKR-FKH-500G","unit":4.92,"cq":12,"cp":59},
+  {"sku":"EK-KHL-RYL-500G","unit":5.33,"cq":12,"cp":64,"keep_draft":true}
+ ],
+ "unchanged_flag": [{"sku":"BW-RSH-STD-3KG","why":"الشيت بلا أرقام"}],
+ "create_draft": [
+  {"sku":"BW-SKR-MFR-250G","ar":"سكري مفتل ملكي 250 جرام","en":"Royal Mufattal Sukkari 250 g","unit":2.75,"cq":12,"cp":33,"cat":"sukkari"},
+  {"sku":"BW-SKR-MFF-500G","ar":"سكري مفتل فاخر 500 جرام","en":"Premium Mufattal Sukkari 500 g","unit":5,"cq":12,"cp":60,"cat":"sukkari"},
+  {"sku":"BW-SQI-MBR-5KG","ar":"صقعي ملكي مبروم 5 كيلو فلة (معرم)","en":"Royal Mabroom Saqai 5 kg Loose","unit":250,"carton_only":true,"cat":"saqai"},
+  {"sku":"BW-DBS-STD-25KG","ar":"سطل دبس 25 كيلو","en":"Date Molasses Bucket 25 kg","unit":172,"carton_only":true,"cat":"dibs"}
+ ]
+}

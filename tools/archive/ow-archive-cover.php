@@ -4,9 +4,9 @@
  *  Source images: covers/ in this repo (Gemini designs, 2026-11-17). */
 add_filter('render_block', function($html,$block){
   if(is_admin() || strpos($html,'ow-sa-hero-bg')===false || ($block['blockName']??'')!=='core/image') return $html;
-  $set=['all'=>[1073,1074],'sukkari'=>[1075,1076],'khalas'=>[1077,1078],'medjool'=>[1079,1080],'saqai'=>[1081,1082],'paste'=>[1083,1084],'gift'=>[1085,1086],'coffee'=>[1087,1088]];
+  $set=['all'=>[1073,1074],'sukkari'=>[1075,1076],'khalas'=>[1077,1078],'medjool'=>[1079,1080],'saqai'=>[1081,1082],'paste'=>[1083,1084],'gift'=>[1085,1086],'coffee'=>[1087,1088],'stuffed'=>[908,908]];
   $map=['dates'=>'all','other-dates'=>'all','khalas'=>'khalas','sukkari'=>'sukkari','saqai'=>'saqai','rushudiya'=>'saqai','medjool'=>'medjool',
-        'date-paste'=>'paste','dibs'=>'paste','tahini'=>'paste','maamoul'=>'paste','stuffed-dates'=>'gift','luxury-serving-boxes'=>'gift','from-the-oasis'=>'gift','coffee'=>'coffee'];
+        'date-paste'=>'paste','dibs'=>'paste','tahini'=>'paste','maamoul'=>'paste','stuffed-dates'=>'stuffed','luxury-serving-boxes'=>'gift','from-the-oasis'=>'gift','coffee'=>'coffee'];
   $ids=$set['all']; $alt='';
   $t=get_queried_object();
   if($t instanceof WP_Term){
@@ -17,9 +17,9 @@ add_filter('render_block', function($html,$block){
       $cur=$cur->parent?get_term($cur->parent,$cur->taxonomy):null;
     }
   }
-  $alt=$alt?:get_bloginfo('name');
-  $d=wp_get_attachment_image($ids[0],'full',false,['class'=>'ow-sa-cover ow-cv-d','fetchpriority'=>'high','loading'=>'eager','decoding'=>'async','alt'=>$alt]);
-  $m=wp_get_attachment_image($ids[1],'full',false,['class'=>'ow-sa-cover ow-cv-m','loading'=>'lazy','decoding'=>'async','alt'=>$alt]);
+  $alt=$alt?:get_bloginfo('name'); $light=($ids===$set['stuffed'])?' ow-cv-light':'';
+  $d=wp_get_attachment_image($ids[0],'full',false,['class'=>'ow-sa-cover ow-cv-d'.$light,'fetchpriority'=>'high','loading'=>'eager','decoding'=>'async','alt'=>$alt]);
+  $m=wp_get_attachment_image($ids[1],'full',false,['class'=>'ow-sa-cover ow-cv-m'.$light,'loading'=>'lazy','decoding'=>'async','alt'=>$alt]);
   if(!$d) return $html;
   return preg_replace('/<img[^>]*>/',$d.$m,$html,1);
 },20,2);
@@ -45,5 +45,12 @@ html[dir="ltr"] .ow-sa-hero::after{background:linear-gradient(90deg,rgba(18,12,7
  .ow-sa-hero .ow-sa-hero-in{max-width:none!important;text-align:center;padding:26px 18px 0}
  .ow-sa-hero .ow-sa-crumbs .wd-breadcrumbs{justify-content:center}
 }
+/* stuffed dates: previous light version */
+.ow-sa-hero:has(.ow-cv-light)::after{background:linear-gradient(180deg,rgba(245,241,232,.62) 0%,rgba(245,241,232,.80) 50%,rgba(245,241,232,.92) 100%)!important}
+.ow-sa-hero:has(.ow-cv-light) .ow-sa-cover{object-position:50% 45%}
+.ow-sa-hero:has(.ow-cv-light) .ow-sa-hero-in{text-align:center;margin-inline:auto;max-width:none!important}
+.ow-sa-hero:has(.ow-cv-light) .ow-sa-crumbs .wd-breadcrumbs{justify-content:center}
+.ow-sa-hero:has(.ow-cv-light) .ow-sa-hero-in,.ow-sa-hero:has(.ow-cv-light) .ow-sa-hero-in *,.ow-sa-hero:has(.ow-cv-light) .ow-sa-lead-txt{color:#1f3d2e!important;text-shadow:none!important}
+.ow-sa-hero:has(.ow-cv-light) .ow-sa-lead-txt a{color:#a8761c!important}
 </style>
 <?php });
